@@ -1,0 +1,276 @@
+/* ============================================================================
+   FINAL CSS – Formal, Beautiful & Professional Dark Theme
+   Movie Database Assignment – Clean, Consistent, Readable
+   Responsive • Medium-large layout • 2026 ready
+   ============================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0f1117;
+    color: #e2e8f0;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Header – Elegant & Fixed */
+header {
+    background: #0d1117;
+    border-bottom: 1px solid #21262d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.6);
+}
+
+.logo {
+    color: #f87171;
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2.8rem;
+}
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: white;
+}
+
+.user-info {
+    color: #94a3b8;
+    font-size: 1.05rem;
+}
+
+.logout {
+    color: #f87171 !important;
+    font-weight: 600;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    padding-top: 95px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 5rem;
+}
+
+/* Flash messages */
+.flash-message {
+    max-width: 1000px;
+    margin: 1.8rem auto;
+    padding: 1.3rem 2.2rem;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.flash-message.success {
+    background: #1e3a2f;
+    color: #a5f3d0;
+    border-left: 5px solid #22c55e;
+}
+
+/* Search bar */
+.search-container {
+    max-width: 800px;
+    margin: 2.5rem auto 3.5rem;
+}
+
+#live-search {
+    width: 100%;
+    padding: 1.4rem 2rem;
+    font-size: 1.4rem;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#live-search:focus {
+    border-color: #f87171;
+    box-shadow: 0 0 0 4px rgba(248,113,113,0.15);
+}
+
+#live-search::placeholder {
+    color: #94a3b8;
+}
+
+/* Movie grid */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 2.8rem 2.2rem;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.movie-card {
+    background: #161b22;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid #2d3748;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.movie-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 70px rgba(248,113,113,0.2);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 1.6rem;
+}
+
+.movie-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    color: #f1f5f9;
+}
+
+.movie-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.15rem;
+    color: #94a3b8;
+    margin-bottom: 1.3rem;
+}
+
+/* ── Beautiful WHITE action buttons (View / Edit / Delete) ── */
+.movie-actions {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 1.4rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.movie-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255,255,255,0.07);
+    color: white;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(4px);
+}
+
+.movie-actions a:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.65);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255,255,255,0.12);
+}
+
+/* View – subtle blue-white glow */
+.view:hover {
+    background: linear-gradient(135deg, rgba(59,130,246,0.25), rgba(59,130,246,0.15));
+    border-color: #60a5fa;
+}
+
+/* Edit – warm amber-white glow */
+.edit:hover {
+    background: linear-gradient(135deg, rgba(251,191,36,0.25), rgba(251,191,36,0.15));
+    border-color: #fbbf24;
+}
+
+/* Delete – clear red-white danger glow */
+.delete:hover {
+    background: linear-gradient(135deg, rgba(239,68,68,0.35), rgba(239,68,68,0.25));
+    border-color: #f87171;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    color: #94a3b8;
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    margin-top: auto;
+    font-size: 1.15rem;
+}
+
+footer span {
+    color: #f87171;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 2rem;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #000;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1.8rem;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    main {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
