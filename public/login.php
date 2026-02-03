@@ -29,28 +29,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php include __DIR__ . '/../includes/header.php'; ?>
 
-<main class="login-page">
-    <div class="login-card">
-        <h1>Login</h1>
+<div class="form-container">
+    <h1>Login</h1>
 
-        <?php if ($error): ?>
-            <div class="error-message"><?= e($error) ?></div>
-        <?php endif; ?>
+    <?php if ($error): ?>
+        <div class="alert error"><?= e($error) ?></div>
+    <?php endif; ?>
 
-        <form method="post">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required autofocus>
-            </div>
+    <form method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required autofocus>
+        </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
 
-            <button type="submit" class="btn-submit">Login</button>
-        </form>
-    </div>
-</main>
+        <button type="submit" class="btn-submit">Login</button>
+    </form>
+</div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>

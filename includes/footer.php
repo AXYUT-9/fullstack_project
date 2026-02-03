@@ -1,6 +1,6 @@
 <footer>
-    <p>© <?= date('Y') ?> Movie Database Application</p>
-    <p>Developed by <span>AXYUT</span></p>
+    <p>© <?= date('Y') ?> Movie Database • Assignment Project</p>
+    <p>Developed by AXYUT</p>
 </footer>
 </body>
 </html>

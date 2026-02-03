@@ -6,12 +6,11 @@ function e($str) {
 }
 
 function flash($msg = null) {
-    if ($msg) {
-        $_SESSION['flash'] = $msg;
-    } elseif (isset($_SESSION['flash'])) {
+    if ($msg) $_SESSION['flash'] = $msg;
+    elseif (isset($_SESSION['flash'])) {
         $m = $_SESSION['flash'];
         unset($_SESSION['flash']);
-        return '<div class="flash-message success">' . e($m) . '</div>';
+        return '<div class="alert success">'.e($m).'</div>';
     }
     return '';
 }
@@ -44,5 +43,5 @@ function get_poster_url($poster) {
     if ($poster && file_exists(__DIR__ . '/../uploads/' . $poster)) {
         return '../uploads/' . $poster;
     }
-    return 'https://via.placeholder.com/320x480?text=' . urlencode(substr($poster ?: 'No Poster', 0, 20));
+    return 'https://via.placeholder.com/300x450?text=No+Poster';
 }
